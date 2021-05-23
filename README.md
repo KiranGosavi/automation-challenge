@@ -1,14 +1,24 @@
 Docker commands to build the custom nginx webserver image:
 
 ```
-#docker build --tag=automation-test .
+#docker-compose up -d --build
 
-#docker run --detach --publish=5001:80\
-    --name=automation-test automation-test
+#docker-compose ps
+
+     Name         Command   State          Ports        
+--------------------------------------------------------
+nginx-webserver   nginx     Up      0.0.0.0:5000->80/tcp
+
 ```
 
 Your static page should be accessible at http://localhost:5001/
 
+To clean up your resources and stop docker container us below command:
+
+```
+#docker-compose down
+
+```
 
 ##TODO##
 
